@@ -9,9 +9,11 @@ import styles from "./App.module.scss";
 
 import "./global.scss";
 
+import { v4 as uuidv4 } from 'uuid';
+
 
 export interface todoType {
-  id: number;
+  id: string;
   content: string;
   isChecked: boolean;
   category: string;
@@ -38,7 +40,7 @@ function addTodos(content: string, category: string){
   const newTodos = [
     ...todos,
     {
-      id: Math.floor(Math.random() * 10000),
+      id: uuidv4(),
       content,
       isChecked: false,
       category,
@@ -48,7 +50,7 @@ function addTodos(content: string, category: string){
   setTodos(newTodos)
 }
 
-function removeTodos(id: number) {
+function removeTodos(id: string) {
   const newTodos = [...todos];
   const filteredTodos = newTodos.filter((eachTodo) => eachTodo.id !== id);
 
@@ -57,7 +59,7 @@ function removeTodos(id: number) {
   setTodos(filteredTodos)
 }
 
-function completeTodos(id: number) {
+function completeTodos(id: string) {
   const newTodos = [...todos];
   newTodos.map((eachTodo) => 
   eachTodo.id === id ? (eachTodo.isChecked = !eachTodo.isChecked) : eachTodo 

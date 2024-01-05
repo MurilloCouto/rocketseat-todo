@@ -6,8 +6,8 @@ import styles from './Item.module.scss'
 
 interface ItemProps {
     todo: todoType[];
-    removeTodos: (id: number) => void;
-    completeTodos: (id: number) => void;
+    removeTodos: (id: string) => void;
+    completeTodos: (id: string) => void;
 }
 
 export function Item({todo, removeTodos, completeTodos}: ItemProps) {
