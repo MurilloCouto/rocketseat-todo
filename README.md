@@ -1,30 +1,36 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Screenshots
 
-Currently, two official plugins are available:
+![App Screenshot](https://github.com/MurilloCouto/rocketseat-todo/blob/main/Captura%20de%20tela%202024-01-05%20173549.png?raw=true)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+# To Do List TypeScript - RocketSeat
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Desafio do curso de ReactJS da RocketSeat, To do list criada utilizando TypeScript.
+## Funcionalidades
 
-- Configure the top-level `parserOptions` property like this:
+- Adição de tarefas personalizadas
+- Seleção de categorias
+- Mostrador de caracteres restantes
+- Contador de tarefas adicionadas à lista
+- Contador de tarefas concluídas
+- Remoção de tarefas
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Link do site 
+- https://rocketseat-todo.vercel.app/
+## Aprendizados
+
+Aprendi muito sobre a tipagem de props no TypeScript, algo que apesar de trabalhoso torna a IDE muito mais inteligente e torna o código mais confiável, aprendi um pouco mais sobre a importação de interfaces, componentes e passagem de propriedades dos componentes pais para os filhos.
+## Melhorias
+
+Acredito que seria legal a interação com um back end que possa gravar permanentemente essas tarefas.
+
+
+## Autor
+
+- [@MurilloCouto](https://www.github.com/MurilloCouto)
+
+## Auxílio
+
+- [@felipejsborges](https://github.com/felipejsborges)
