@@ -2,6 +2,7 @@ import { Header } from "./components/Header";
 import { Empty } from './components/list/Empty'
 import { Item } from "./components/list/Item";
 import { TodoForm } from "./components/list/TodoForm";
+import { Counter } from "./components/list/Counter";
 
 import { useState } from "react";
 
@@ -10,7 +11,6 @@ import styles from "./App.module.scss";
 import "./global.scss";
 
 import { v4 as uuidv4 } from 'uuid';
-
 
 export interface todoType {
   id: string;
@@ -76,6 +76,7 @@ return (
       <div className={styles.inputContainer}>
         <TodoForm addTodos={addTodos}/>
       </div>
+        <Counter todos={todos}/>
       <div>
           {todos.length > 0 ? (
           <Item 

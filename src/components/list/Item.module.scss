@@ -10,14 +10,32 @@
     align-items: center;
     justify-content: space-between;
 
-    input[type = 'checkbox'] {
-        margin-right: 1rem;
-        height: 1.5rem;
+    input[type = 'checkbox'] { 
+        width: 1.8rem;
+        height: 1.3rem;
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    input[type='checkbox']:checked+.checkbox_custom {
+        background-color: var(--blue-400);
+        /* Cor quando está marcado */
+    }
+
+    p {
+        margin-left: 0.75rem;
+    }
+
+    .checkbox_custom {
+        width: 1.8rem;
+        height: 1.3rem;
         background-color: transparent;
-        color: rgb(89, 122, 221);
-        border: 0;
-        align-items: center;
-        
+        border: 2px solid var(--blue-400);
+        border-radius: 100%;
+        cursor: pointer;
+        transition: background-color 0.3s;
     }
 
     .buttonTrash {
@@ -37,12 +55,12 @@
         padding: 0.5rem;
         border-radius: 8px;
         background-color: var(--gray-400);
-        color: rgb(60, 245, 255);
+        color: var(--blue-400);
     }
 }
 
 .itemList {
-    margin-top: 2rem;
+    margin-top: 1rem;
     width: 46rem;
 }
 

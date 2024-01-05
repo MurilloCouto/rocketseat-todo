@@ -22,6 +22,7 @@ export function Item({todo, removeTodos, completeTodos}: ItemProps) {
                         type='checkbox' 
                         onClick={() => completeTodos(eachTodo.id)}
                     />
+                    <div className={styles.checkbox_custom}></div>
                     <p 
                         className={styles.content}
                         style={{textDecoration: eachTodo.isChecked === true ? "line-through" : ''}}
