@@ -1,0 +1,51 @@
+.item {
+    color: white;
+    background-color: var(--gray-500);
+    width: 100%;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 5px 5px rgba(255, 255, 255, 0.1);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    input[type = 'checkbox'] {
+        margin-right: 1rem;
+        height: 1.5rem;
+        background-color: transparent;
+        color: rgb(89, 122, 221);
+        border: 0;
+        align-items: center;
+        
+    }
+
+    .buttonTrash {
+        background-color: transparent;
+        color: white;
+        border: 0;
+    }
+
+    .content {
+        width: 100%;
+        justify-content: left;
+    }
+
+    .category {
+        width: 30%;
+        margin-right: 1rem;
+        padding: 0.5rem;
+        border-radius: 8px;
+        background-color: var(--gray-400);
+        color: rgb(60, 245, 255);
+    }
+}
+
+.itemList {
+    margin-top: 2rem;
+    width: 46rem;
+}
+
+.item + .item {
+    margin-top: 0.875rem;
+}
