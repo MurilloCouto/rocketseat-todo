@@ -25,3 +25,10 @@
         color: var(--gray-300);
     }
 }
+
+@media screen and (max-width: 768px) {
+    .empty {
+        width: 15rem;
+        text-align: center;
+    }
+}

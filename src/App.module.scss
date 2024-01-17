@@ -10,3 +10,9 @@
             display: flex;
         }
 }
+
+@media screen and (max-width: 768px) { 
+    html{
+        width: 27rem;
+    }
+}

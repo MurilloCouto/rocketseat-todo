@@ -67,3 +67,18 @@
 .item + .item {
     margin-top: 0.875rem;
 }
+
+@media screen and (max-width: 768px) {
+
+    .itemList {
+        width: 21rem;
+    }
+
+
+    .item{
+        .checkbox_custom {
+        width: 2rem;
+        height: 1rem;
+    }
+    }
+}

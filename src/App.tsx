@@ -1,5 +1,5 @@
 import { Header } from "./components/Header";
-import { Empty } from './components/list/Empty'
+import { Empty } from "./components/list/Empty";
 import { Item } from "./components/list/Item";
 import { TodoForm } from "./components/list/TodoForm";
 import { Counter } from "./components/list/Counter";
@@ -10,7 +10,7 @@ import styles from "./App.module.scss";
 
 import "./global.scss";
 
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 export interface todoType {
   id: string;
@@ -20,7 +20,6 @@ export interface todoType {
 }
 
 export function App() {
-
   const [todos, setTodos] = useState<todoType[]>([
     // {
     //   id: 1,
@@ -34,60 +33,61 @@ export function App() {
     //   isChecked: true,
     //   category: 'Lazer',
     // },
-])
+  ]);
 
-function addTodos(content: string, category: string){
-  const newTodos = [
-    ...todos,
-    {
-      id: uuidv4(),
-      content,
-      isChecked: false,
-      category,
-    },
-  ];
+  function addTodos(content: string, category: string) {
+    const newTodos = [
+      ...todos,
+      {
+        id: uuidv4(),
+        content,
+        isChecked: false,
+        category,
+      },
+    ];
 
-  setTodos(newTodos)
-}
+    setTodos(newTodos);
+  }
 
-function removeTodos(id: string) {
-  const newTodos = [...todos];
-  const filteredTodos = newTodos.filter((eachTodo) => eachTodo.id !== id);
+  function removeTodos(id: string) {
+    const newTodos = [...todos];
+    const filteredTodos = newTodos.filter((eachTodo) => eachTodo.id !== id);
 
-  console.log(filteredTodos)
+    console.log(filteredTodos);
 
-  setTodos(filteredTodos)
-}
+    setTodos(filteredTodos);
+  }
 
-function completeTodos(id: string) {
-  const newTodos = [...todos];
-  newTodos.map((eachTodo) => 
-  eachTodo.id === id ? (eachTodo.isChecked = !eachTodo.isChecked) : eachTodo 
-  );
+  function completeTodos(id: string) {
+    const newTodos = [...todos];
+    newTodos.map((eachTodo) =>
+      eachTodo.id === id ? (eachTodo.isChecked = !eachTodo.isChecked) : eachTodo
+    );
 
-  setTodos(newTodos)
-}
+    setTodos(newTodos);
+  }
 
-return (
-  <div>
-    <Header />
+  return (
+    <div className={styles.container}>
+      <Header />
 
-    <div className={styles.content}>
-      <div className={styles.inputContainer}>
-        <TodoForm addTodos={addTodos}/>
-      </div>
-        <Counter todos={todos}/>
-      <div>
+      <div className={styles.content}>
+        <div className={styles.inputContainer}>
+          <TodoForm addTodos={addTodos} />
+        </div>
+        <Counter todos={todos} />
+        <div>
           {todos.length > 0 ? (
-          <Item 
-          todo={todos} 
-          removeTodos={removeTodos}
-          completeTodos={completeTodos} 
-          />
-        ) : (
-          <Empty />
-        )}
+            <Item
+              todo={todos}
+              removeTodos={removeTodos}
+              completeTodos={completeTodos}
+            />
+          ) : (
+            <Empty />
+          )}
+        </div>
       </div>
     </div>
-  </div>
-)}
+  );
+}

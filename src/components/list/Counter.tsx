@@ -1,19 +1,20 @@
-import { useEffect, useState } from 'react';
-import { todoType } from '../../App';
+import { useEffect, useState } from "react";
+import { todoType } from "../../App";
 
-import styles from './Counter.module.scss'
+import styles from "./Counter.module.scss";
 
 interface CountProps {
-    todos: todoType[];
+  todos: todoType[];
 }
 
-export function Counter({todos}: CountProps) {
+export function Counter({ todos }: CountProps) {
+  const [count, setCount] = useState(0);
 
-    const [count, setCount] = useState(0)
-
-    useEffect(() => {
+  useEffect(() => {
     // Calcula a contagem de tarefas concluídas
-    const completedCount = todos.filter((eachTodo) => eachTodo.isChecked === true).length;
+    const completedCount = todos.filter(
+      (eachTodo) => eachTodo.isChecked === true
+    ).length;
 
     // Atualiza o estado com a contagem calculada
     setCount(completedCount);
@@ -21,11 +22,15 @@ export function Counter({todos}: CountProps) {
 
   return (
     <div className={styles.counter}>
-        <p>Tarefas criadas<span>{todos.length}</span></p>
-        <p>
-            Concluídas
-            <span>{count} de {todos.length}</span>
-        </p>
+      <p className={styles.concluidas}>
+        Tarefas criadas<span>{todos.length}</span>
+      </p>
+      <p>
+        Concluídas
+        <span>
+          {count} de {todos.length}
+        </span>
+      </p>
     </div>
   );
 }

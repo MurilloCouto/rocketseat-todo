@@ -13,4 +13,18 @@
         padding: 0.2rem 0.5rem;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .counter {
+        width: 15rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        .concluidas {
+            display: none;
+        }
+    }
+}
     
